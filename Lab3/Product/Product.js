@@ -9,12 +9,12 @@ import {
   FlatList,
   Alert,
 } from 'react-native';
-
+import styles from './Style';
 import {useEffect, useState} from 'react';
 
 export default ProductScreen = () => {
   const Item = ({item}) => (
-    <View style={{flex: 1, flexDirection: 'row'}}>
+    <View style={{flex: 1, flexDirection: 'row',paddingHorizontal: 10,}}>
       <View style={{flex: 1}}>
         <Image source={{uri:item.thumbnail}} style={{width: 120, height: 120}}/>
       </View>
@@ -26,9 +26,15 @@ export default ProductScreen = () => {
         <Text style={{color:'green'}}>Rating: {item.rating}</Text>
         <Text>Stock: {item.stock}</Text>
         <Text>Brand: {item.brand}</Text>
-
         <Text>Category: {item.category}</Text>
+        
+        <View style={{ flexDirection:'row', justifyContent:'space-evenly', }}>
+            <TouchableOpacity style={ styles.button}><Text>Detail</Text></TouchableOpacity>
+            <TouchableOpacity style={ styles.button}><Text>Add</Text></TouchableOpacity>
+            <TouchableOpacity style={ styles.button} ><Text>Delete</Text></TouchableOpacity>
+        </View> 
       </View>
+
     </View>
   );
 
