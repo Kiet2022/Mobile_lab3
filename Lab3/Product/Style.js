@@ -16,5 +16,9 @@ export default styles = StyleSheet.create({
         color:'white',
         backgroundColor:'#2EEDF7',
         borderRadius:5
+    },
+    Headers:{
+        fontSize:40
+        
     }
 });
