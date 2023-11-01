@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import styles from './Style';
 import {useEffect, useState} from 'react';
+import {Icon, Appbar} from 'react-native-paper';
 
 export default ProductScreen = () => {
   const Item = ({item}) => (
@@ -33,18 +34,19 @@ export default ProductScreen = () => {
 
         <View style={{flexDirection: 'row', justifyContent: 'space-evenly'}}>
           <TouchableOpacity style={styles.button}>
-            <Text>Detail</Text>
+            <Text style={styles.buttonText}>Detail</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button}>
-            <Text>Add</Text>
+            <Text style={styles.buttonText}>Add</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button}>
-            <Text>Delete</Text>
+            <Text style={styles.buttonText}>Delete</Text>
           </TouchableOpacity>
         </View>
       </View>
     </View>
   );
+
 
   const [data, setData] = useState([]);
   const filePath = 'https://dummyjson.com/products';
@@ -53,7 +55,7 @@ export default ProductScreen = () => {
     fetch(filePath)
       .then(response => {
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error();
         }
         return response.json();
       })
@@ -66,14 +68,18 @@ export default ProductScreen = () => {
   });
   //Alert.alert(data.length.toString());
   return (
-    <SafeAreaView style={{flex: 1, padding:10}}>
-       <View  ><Text style={styles.Headers}>PRODUCT LIST</Text></View> 
-      <View style={{flex: 3,flexDirection: 'row'}}>
+    <SafeAreaView style={{flex: 1, padding: 10}}>
+      <View>
+        <Text style={styles.Headers}>PRODUCT LIST</Text>
+      </View>
+
+      <View style={{flex: 3, flexDirection: 'row'}}>
         <FlatList
           data={data}
           renderItem={({item}) => <Item item={item} title={item.title} />}
         />
       </View>
+
     </SafeAreaView>
   );
 };

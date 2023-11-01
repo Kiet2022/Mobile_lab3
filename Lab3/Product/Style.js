@@ -13,12 +13,21 @@ export default styles = StyleSheet.create({
     button:{
         padding:10,
         fontSize:15,
-        color:'white',
         backgroundColor:'#2EEDF7',
         borderRadius:5
     },
+
+    BottomNavigator:{
+        backgroundColor:'#E3F7F6',
+        flexDirection: 'row', 
+        justifyContent: 'space-evenly',
+        padding:10,
+    },
     Headers:{
-        fontSize:40
-        
+        fontSize:40        
+    },
+    buttonText:{
+        color:'white',
+        fontSize:15
     }
 });
