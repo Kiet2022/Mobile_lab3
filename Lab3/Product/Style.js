@@ -10,7 +10,9 @@ export default styles = StyleSheet.create({
         //alignItems: 'center',
         backgroundColor:"#DDD"
     },
-    
+    Title:{
+        fontSize: 20
+    },
     button:{
         padding:10,
         fontSize:15,

@@ -50,48 +50,48 @@ export default AddProduct = () => {
     <SafeAreaView style={{flex: 1, padding: 10}}>
       <Text style={styles.Headers}>Add Product</Text>
       <View>
-        <Text>Title</Text>
-        <TextInput style={styles.InputBox}/>
+        <Text style={styles.Title}>Title</Text>
+        <TextInput style={styles.InputBox} placeholder='Enter the title'/>
       </View>
 
       <View>
-        <Text>Description</Text>
-        <TextInput style={styles.InputBox}/>
+        <Text style={styles.Title}>Description</Text>
+        <TextInput style={styles.InputBox} placeholder='Description'/>
       </View>
 
       <View>
-        <Text>Price</Text>
-        <TextInput style={styles.InputBox}/>
+        <Text style={styles.Title}>Price</Text>
+        <TextInput style={styles.InputBox} placeholder='Input Price'/>
       </View>
 
       <View>
-        <Text>Discount</Text>
-        <TextInput style={styles.InputBox}/>
+        <Text style={styles.Title}>Discount</Text>
+        <TextInput style={styles.InputBox} placeholder='Discount'/>
       </View>
 
       <View>
-        <Text>Rating</Text>
-        <TextInput style={styles.InputBox}/>
+        <Text style={styles.Title}>Rating</Text>
+        <TextInput style={styles.InputBox} placeholder='Rating'/>
       </View>
 
       <View>
-        <Text>Stock</Text>
-        <TextInput style={styles.InputBox}/>
+        <Text style={styles.Title}>Stock</Text>
+        <TextInput style={styles.InputBox} placeholder='Stock'/>
       </View>
 
       <View>
-        <Text>Brand</Text>
-        <TextInput style={styles.InputBox}/>
+        <Text style={styles.Title}>Brand</Text>
+        <TextInput style={styles.InputBox} placeholder='Brand'/>
       </View>
 
       <View>
-        <Text>Category</Text>
-        <TextInput style={styles.InputBox}/>
+        <Text style={styles.Title}>Category</Text>
+        <TextInput style={styles.InputBox} placeholder='Category'/>
       </View>
 
       <View>
-        <Text>Images</Text>
-        <TextInput style={styles.InputBox}/>
+        <Text style={styles.Title}>Images</Text>
+        <TextInput style={styles.InputBox} placeholder='Input img url'/>
       </View>
       <View>
         <TouchableOpacity style={styles.button} >
