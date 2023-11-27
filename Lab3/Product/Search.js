@@ -49,7 +49,8 @@ const ProductScreen = (data) => {
     );
     //Alert.alert(data.length.toString());
     return (
-      <SafeAreaView style={{flex: 1, padding: 10}}>
+      //<SafeAreaView style={{flex: 1, padding: 10}}>
+      <View>
         <View>
           <Text style={styles.Headers}>PRODUCT LIST</Text>
         </View>
@@ -60,8 +61,8 @@ const ProductScreen = (data) => {
             renderItem={({item}) => <Item item={item} title={item.title} />}
           />
         </View>
-  
-      </SafeAreaView>
+        </View>
+//</SafeAreaView>
     );
   };
   
@@ -73,15 +74,17 @@ const SearchProduct = () => {
     let filePath = 'https://dummyjson.com/products/';
     
         const Search =() =>{
+            console.log('value: ' + value)
+
             if(value !=""){
                 filePath = 'https://dummyjson.com/products/search?q=' + value;
                 fetch(filePath).then((response) =>{
                     if(!response.ok) throw new Error('network is error');
 
                     return response.json();
-                }).then((d) => {setData(d.products)}).catch((error)=>{console.log(error)})
+                }).then((d) => {setData(d.products)}).catch((error)=>{console.log(error)}).finally(console.log(data))
             }
-
+            
             if(data.length == 0){
                 Alert.alert('cannot find');
             }
