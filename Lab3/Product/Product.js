@@ -14,6 +14,25 @@ import {useEffect, useState} from 'react';
 import {Icon, Appbar} from 'react-native-paper';
 
 export default ProductScreen = () => {
+  const [data, setData] = useState([]);
+  const filePath = 'https://dummyjson.com/products';
+
+  useEffect(() => {
+    fetch(filePath)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error();
+        }
+        return response.json();
+      })
+      .then(d => {
+        setData(d.products);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  });
+
   const Item = ({item}) => (
     <View style={{flex: 1, flexDirection: 'row', paddingHorizontal: 10}}>
       <View style={{flex: 1}}>
@@ -48,24 +67,6 @@ export default ProductScreen = () => {
   );
 
 
-  const [data, setData] = useState([]);
-  const filePath = 'https://dummyjson.com/products';
-
-  useEffect(() => {
-    fetch(filePath)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error();
-        }
-        return response.json();
-      })
-      .then(d => {
-        setData(d.products);
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  });
   //Alert.alert(data.length.toString());
   return (
     <SafeAreaView style={{flex: 1, padding: 10}}>

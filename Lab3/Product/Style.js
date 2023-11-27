@@ -1,6 +1,6 @@
 
 import {StyleSheet} from 'react-native';
-import { white } from 'react-native-paper/lib/typescript/styles/themes/v2/colors';
+import { black, white } from 'react-native-paper/lib/typescript/styles/themes/v2/colors';
 
 
 export default styles = StyleSheet.create({
@@ -10,6 +10,7 @@ export default styles = StyleSheet.create({
         //alignItems: 'center',
         backgroundColor:"#DDD"
     },
+    
     button:{
         padding:10,
         fontSize:15,
@@ -27,7 +28,13 @@ export default styles = StyleSheet.create({
         fontSize:40        
     },
     buttonText:{
+        textAlign: 'center',
         color:'white',
-        fontSize:15
+        fontSize:20
+    },
+    InputBox:{
+        borderColor: 'black',
+        borderRadius: 5
     }
+
 });
