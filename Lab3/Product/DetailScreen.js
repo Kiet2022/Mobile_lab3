@@ -20,45 +20,51 @@ import {
     useEffect(()=>{
         fetch(filePath).then((response) =>{
             if(!response.ok) throw new Error('network is error');
-
             return response.json();
-        }).then((d) => {setData(d.products)}).catch((error)=>{console.log(error)})
+        }).then((d) => {setData(d)}).catch((error)=>{console.log(error)})
     })
 
-    const MyComponent = () => (
-      <Card>
-        <Card.Title title="Card Title" subtitle="Card Subtitle" left={LeftContent} />
-        <Card.Content>
-          <Text variant="titleLarge">Card title</Text>
-          <Text variant="bodyMedium">Card content</Text>
-        </Card.Content>
-        <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
-        <Card.Actions>
-          <Button>Cancel</Button>
-          <Button>Ok</Button>
-        </Card.Actions>
-      </Card>
-    );
 
-    return(
-        <View style={{flex: 1, flexDirection: 'row', paddingHorizontal: 10}}>
+    const Item = ({item}) => (
+      <View style={styles.Card}>
         <View style={{flex: 1}}>
           <Image
             source={{uri: item.thumbnail}}
-            style={{width: 120, height: 120}}
+            style={{ height: 160}}
+          />
+        </View>
+    
+          <View style={{flex: 1}}>
+            <Text><Text style={styles.TitleSmall}>Description:</Text> {item.description}</Text>
+            <Text><Text style={styles.TitleSmall}>Price:</Text> {item.price}</Text>
+            <Text><Text style={styles.TitleSmall}>Discount:</Text> {item.discountPercentage}</Text>
+            <Text style={{color: 'green'}}>Rating: {item.rating}</Text>
+            <Text><Text style={styles.TitleSmall}>Stock:</Text> {item.stock}</Text>
+            <Text><Text style={styles.TitleSmall}>Brand:</Text> {item.brand}</Text>
+            <Text><Text style={styles.TitleSmall}>Category:</Text> {item.category}</Text>
+          </View> 
+      </View>
+    ); 
+
+    return(
+      <View style={styles.Card}>
+        <View style={{flex: 1}}>
+          <Image
+            source={{uri: data.thumbnail}}
+            style={{ height: '50%'}}
           />
         </View>
   
-        <View style={{flex: 2}}>
-          <Text>Description: {item.description}</Text>
-          <Text>Price: {item.price}</Text>
-          <Text>Discount: {item.discountPercentage}</Text>
-          <Text style={{color: 'green'}}>Rating: {item.rating}</Text>
-          <Text>Stock: {item.stock}</Text>
-          <Text>Brand: {item.brand}</Text>
-          <Text>Category: {item.category}</Text>
+        <View style={{ justifyContent: 'flex-start'}} >
+            <Text><Text style={styles.TitleSmall}>Description:</Text> {data.description}</Text>
+            <Text><Text style={styles.TitleSmall}>Price:</Text> {data.price}</Text>
+            <Text><Text style={styles.TitleSmall}>Discount:</Text> {data.discountPercentage}</Text>
+            <Text style={{color: 'green'}}>Rating: {data.rating}</Text>
+            <Text><Text style={styles.TitleSmall}>Stock:</Text> {data.stock}</Text>
+            <Text><Text style={styles.TitleSmall}>Brand:</Text> {data.brand}</Text>
+            <Text><Text style={styles.TitleSmall}>Category:</Text> {data.category}</Text>
   
-          <View style={{flexDirection: 'row', justifyContent: 'space-evenly'}}>
+          <View style={{flexDirection: 'row', justifyContent: 'flex-end'}}>
             <TouchableOpacity style={styles.button}>
               <Text style={styles.buttonText}>Delete</Text>
             </TouchableOpacity>

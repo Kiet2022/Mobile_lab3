@@ -9,7 +9,7 @@ import SearchProduct from './Product/Search';
 import styles from './Product/Style';
 const App=()=> {
   return (
-    <SearchProduct/>
+    <DetailScreen/>
   );
 }
 
