@@ -41,9 +41,8 @@ export default ProductScreen = () => {
           style={{width: 120, height: 120}}
         />
       </View>
-
       <View style={{flex: 2}}>
-        <Text>Description: {item.description}</Text>
+        <Text style={{fontWeights: 'bold'}}>Description: {item.description}</Text>
         <Text>Price: {item.price}</Text>
         <Text>Discount: {item.discountPercentage}</Text>
         <Text style={{color: 'green'}}>Rating: {item.rating}</Text>
@@ -67,7 +66,6 @@ export default ProductScreen = () => {
   );
 
 
-  //Alert.alert(data.length.toString());
   return (
     <SafeAreaView style={{flex: 1, padding: 10}}>
       <View>

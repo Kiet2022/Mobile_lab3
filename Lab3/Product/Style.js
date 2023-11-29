@@ -13,11 +13,23 @@ export default styles = StyleSheet.create({
     Title:{
         fontSize: 20
     },
+    TitleSmall:{
+        fontSize: 16,
+        fontWeight: 'bold'
+    },
+    Card:{
+        borderWidth: 2,
+        borderColor: 'black',
+        borderRadius: 10,
+        flex: 1, 
+        paddingHorizontal: 5,
+        margin:5,
+    },
     button:{
         padding:10,
         fontSize:15,
         backgroundColor:'#2EEDF7',
-        borderRadius:5
+        borderRadius:10
     },
 
     BottomNavigator:{
