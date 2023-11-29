@@ -9,9 +9,10 @@ import {
     FlatList,
     Alert,
   } from 'react-native';
+import { Card, Button } from 'react-native-paper';
+
   import styles from './Style';
   import {useEffect, useState} from 'react';
-  import {Icon, Appbar} from 'react-native-paper';
 
   export default DetailScreen =() =>{
     const[data, setData] = useState([]);
@@ -24,55 +25,47 @@ import {
         }).then((d) => {setData(d)}).catch((error)=>{console.log(error)})
     })
 
+    const MyComponent = () => (
+      <Card>
+        <Card.Title title="Card Title" subtitle="Card Subtitle" left={LeftContent} />
+        <Card.Content>
+          <Text variant="titleLarge">{data.title}</Text>
+          <Text variant="bodyMedium">Card content</Text>
 
-    const Item = ({item}) => (
-      <View style={styles.Card}>
-        <View style={{flex: 1}}>
-          <Image
-            source={{uri: item.thumbnail}}
-            style={{ height: 160}}
-          />
-        </View>
-    
-          <View style={{flex: 1}}>
-            <Text><Text style={styles.TitleSmall}>Description:</Text> {item.description}</Text>
-            <Text><Text style={styles.TitleSmall}>Price:</Text> {item.price}</Text>
-            <Text><Text style={styles.TitleSmall}>Discount:</Text> {item.discountPercentage}</Text>
-            <Text style={{color: 'green'}}>Rating: {item.rating}</Text>
-            <Text><Text style={styles.TitleSmall}>Stock:</Text> {item.stock}</Text>
-            <Text><Text style={styles.TitleSmall}>Brand:</Text> {item.brand}</Text>
-            <Text><Text style={styles.TitleSmall}>Category:</Text> {item.category}</Text>
-          </View> 
-      </View>
-    ); 
+          <Text variant="bodyMedium"><Text style={styles.TitleSmall}>Description:</Text> {data.description}</Text>
+            <Text variant="bodyMedium"><Text style={styles.TitleSmall}>Price:</Text> {data.price}</Text>
+            <Text variant="bodyMedium"><Text style={styles.TitleSmall}>Discount:</Text> {data.discountPercentage}</Text>
+            <Text variant="bodyMedium" style={{color: 'green'}}>Rating: {data.rating}</Text>
+            <Text variant="bodyMedium"><Text style={styles.TitleSmall}>Stock:</Text> {data.stock}</Text>
+            <Text variant="bodyMedium"><Text style={styles.TitleSmall}>Brand:</Text> {data.brand}</Text>
+            <Text variant="bodyMedium"><Text style={styles.TitleSmall}>Category:</Text> {data.category}</Text>
+        </Card.Content>
+        <Card.Cover source={{ uri: data.thumbnail }} />
+        <Card.Actions>
+          <Button>Cancel</Button>
+          <Button>Ok</Button>
+        </Card.Actions>
+      </Card>
+    );
 
     return(
-      <View style={styles.Card}>
-        <View style={{flex: 1}}>
-          <Image
-            source={{uri: data.thumbnail}}
-            style={{ height: '50%'}}
-          />
-        </View>
-  
-        <View style={{ justifyContent: 'flex-start'}} >
-            <Text><Text style={styles.TitleSmall}>Description:</Text> {data.description}</Text>
-            <Text><Text style={styles.TitleSmall}>Price:</Text> {data.price}</Text>
-            <Text><Text style={styles.TitleSmall}>Discount:</Text> {data.discountPercentage}</Text>
-            <Text style={{color: 'green'}}>Rating: {data.rating}</Text>
-            <Text><Text style={styles.TitleSmall}>Stock:</Text> {data.stock}</Text>
-            <Text><Text style={styles.TitleSmall}>Brand:</Text> {data.brand}</Text>
-            <Text><Text style={styles.TitleSmall}>Category:</Text> {data.category}</Text>
-  
-          <View style={{flexDirection: 'row', justifyContent: 'flex-end'}}>
-            <TouchableOpacity style={styles.button}>
-              <Text style={styles.buttonText}>Delete</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.button}>
-              <Text style={styles.buttonText}>Cancel</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </View>
+      <Card>
+        <Card.Cover source={{ uri: data.thumbnail }} />
+        <Card.Title title={data.title} />
+        <Card.Content>
+          <Text variant="bodyMedium"><Text style={styles.TitleSmall}>Description:</Text> {data.description}</Text>
+            <Text variant="bodyMedium"><Text style={styles.TitleSmall}>Price:</Text> {data.price}</Text>
+            <Text variant="bodyMedium"><Text style={styles.TitleSmall}>Discount:</Text> {data.discountPercentage}</Text>
+            <Text variant="bodyMedium" style={{color: 'green'}}>Rating: {data.rating}</Text>
+            <Text variant="bodyMedium"><Text style={styles.TitleSmall}>Stock:</Text> {data.stock}</Text>
+            <Text variant="bodyMedium"><Text style={styles.TitleSmall}>Brand:</Text> {data.brand}</Text>
+            <Text variant="bodyMedium"><Text style={styles.TitleSmall}>Category:</Text> {data.category}</Text>
+        </Card.Content>
+        
+        <Card.Actions>
+          <Button>Cancel</Button>
+          <Button>Ok</Button>
+        </Card.Actions>
+      </Card>
     );
   }
