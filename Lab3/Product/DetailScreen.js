@@ -25,29 +25,6 @@ import { Card, Button } from 'react-native-paper';
         }).then((d) => {setData(d)}).catch((error)=>{console.log(error)})
     })
 
-    const MyComponent = () => (
-      <Card>
-        <Card.Title title="Card Title" subtitle="Card Subtitle" left={LeftContent} />
-        <Card.Content>
-          <Text variant="titleLarge">{data.title}</Text>
-          <Text variant="bodyMedium">Card content</Text>
-
-          <Text variant="bodyMedium"><Text style={styles.TitleSmall}>Description:</Text> {data.description}</Text>
-            <Text variant="bodyMedium"><Text style={styles.TitleSmall}>Price:</Text> {data.price}</Text>
-            <Text variant="bodyMedium"><Text style={styles.TitleSmall}>Discount:</Text> {data.discountPercentage}</Text>
-            <Text variant="bodyMedium" style={{color: 'green'}}>Rating: {data.rating}</Text>
-            <Text variant="bodyMedium"><Text style={styles.TitleSmall}>Stock:</Text> {data.stock}</Text>
-            <Text variant="bodyMedium"><Text style={styles.TitleSmall}>Brand:</Text> {data.brand}</Text>
-            <Text variant="bodyMedium"><Text style={styles.TitleSmall}>Category:</Text> {data.category}</Text>
-        </Card.Content>
-        <Card.Cover source={{ uri: data.thumbnail }} />
-        <Card.Actions>
-          <Button>Cancel</Button>
-          <Button>Ok</Button>
-        </Card.Actions>
-      </Card>
-    );
-
     return(
       <Card>
         <Card.Cover source={{ uri: data.thumbnail }} />

@@ -40,22 +40,22 @@ const SearchProduct = () => {
 
         const Item = ({item}) => (
           <View style={styles.Card}>
-          <View style={{flex: 1}}>
-            <Image
-              source={{uri: item.thumbnail}}
-              style={{ height: 160}}
-            />
-          </View>
-      
             <View style={{flex: 1}}>
-              <Text><Text style={styles.TitleSmall}>Description:</Text> {item.description}</Text>
-              <Text><Text style={styles.TitleSmall}>Price:</Text> {item.price}</Text>
-              <Text><Text style={styles.TitleSmall}>Discount:</Text> {item.discountPercentage}</Text>
-              <Text style={{color: 'green'}}>Rating: {item.rating}</Text>
-              <Text><Text style={styles.TitleSmall}>Stock:</Text> {item.stock}</Text>
-              <Text><Text style={styles.TitleSmall}>Brand:</Text> {item.brand}</Text>
-              <Text><Text style={styles.TitleSmall}>Category:</Text> {item.category}</Text>
-            </View> 
+              <Image
+                source={{uri: item.thumbnail}}
+                style={{ height: 160}}
+              />
+            </View>
+        
+              <View style={{flex: 1}}>
+                <Text><Text style={styles.TitleSmall}>Description:</Text> {item.description}</Text>
+                <Text><Text style={styles.TitleSmall}>Price:</Text> {item.price}</Text>
+                <Text><Text style={styles.TitleSmall}>Discount:</Text> {item.discountPercentage}</Text>
+                <Text style={{color: 'green'}}>Rating: {item.rating}</Text>
+                <Text><Text style={styles.TitleSmall}>Stock:</Text> {item.stock}</Text>
+                <Text><Text style={styles.TitleSmall}>Brand:</Text> {item.brand}</Text>
+                <Text><Text style={styles.TitleSmall}>Category:</Text> {item.category}</Text>
+              </View> 
           </View>
         ); 
  
